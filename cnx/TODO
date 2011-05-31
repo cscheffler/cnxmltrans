@@ -1,0 +1,34 @@
+Hi Kathi, Mark
+
+Specifically, I want to get the following work flow going for translation
+
+ * Assume that a copy of the module has already been derived in
+   Connexions and that its module number (?jargon) is known. This
+   should eventually be automated through the API so that the user can
+   type the number of an existing module into Connexions and the
+   derivation happens automatically (or perhaps not, if this is a good
+   phase during which to get the user to sign the licence).
+
+ * Type the module number into the editor to start.
+
+ * The editor pulls the CNXML and displays it in the edit window. XML
+   tags are grayed out and not editable. However, the user can delete
+   a tag by selecting a region of text that contains it and pressing
+   <Delete>. This is a feature since users might want to remove or
+   add, for example, <em></em> tags.
+
+ * The editor autosaves in a cookie every minute or so. If the browser
+   crashes, the editor will reload the latest copy of the current
+   module when it is accessed again.
+
+ * There are also save/load buttons that allow the user to save a copy
+   of the text to the local disk. (Is this possible with browser
+   security?)
+
+ * When the user is ready to publish, they click the publish
+   button. This runs a XML syntax checker, which will point out any
+   errors. The CNXML is then submitted to Connexions via the SWORD
+   API.
+
+ * We still need to figure out the issues with licencing and
+   publishing.
