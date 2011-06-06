@@ -1,3 +1,46 @@
+Prioritised tasks:
+
+ 4. xml: Initial search for and evaluation of XML editors for expert
+    users
+
+ 5. ed: Tag creation and deletion from special allowed set:
+    <emphasis></emphasis>
+
+ 6. ed: show/hide mathml blocks (simply by allowing the user to click
+    a show/hide button)
+
+ 7. ed: autosave and recovery
+
+ 8. ed: fix weird bug. when holding down shift and the left arrow to
+    select text, the selection does not grow to the left as it
+    should. however, when releasing the left arrow (while still
+    holding shift) and then pressing and holding it again poses no
+    problems. this effect does not occur when using the right
+    arrow. should check whether this is a bug in the base codemirror
+    editor.
+
+ 9. xml: Pull cnxml using SWORD. The editor should pull the MDML
+    automatically.
+
+ 10. xml: Pull cnxml from personal (or other) workspace using the
+     user's credentials (username and password) using SWORD.
+
+ 11. xml: Push back to Connexions using SWORD.
+
+ 12. ed: SWORD pull/push in the translation editor.
+
+ 13. ed and xml: publishing through SWORD.
+
+
+Unprioritised tasks (nice to haves):
+
+ * Use MathJax to display maths in the editor, rather than simply
+   hiding it.
+
+ * Grab and display images so the caption translation is in context.
+
+------
+
 Hi Kathi, Mark
 
 Specifically, I want to get the following work flow going for translation
@@ -8,14 +51,6 @@ Specifically, I want to get the following work flow going for translation
    type the number of an existing module into Connexions and the
    derivation happens automatically (or perhaps not, if this is a good
    phase during which to get the user to sign the licence).
-
- * Type the module number into the editor to start.
-
- * The editor pulls the CNXML and displays it in the edit window. XML
-   tags are grayed out and not editable. However, the user can delete
-   a tag by selecting a region of text that contains it and pressing
-   <Delete>. This is a feature since users might want to remove or
-   add, for example, <em></em> tags.
 
  * The editor autosaves in a cookie every minute or so. If the browser
    crashes, the editor will reload the latest copy of the current
@@ -32,3 +67,26 @@ Specifically, I want to get the following work flow going for translation
 
  * We still need to figure out the issues with licencing and
    publishing.
+
+---
+
+I think that we could live with the ugly maths for now but if we're
+going to turn it into a classy tool eventually we might also be able to
+use MathJax to just render the equations in the textarea. They'll take
+up a ton less room but then we'd need to allow you to switch to MathML
+view to edit.
+
+---
+
+No idea how possible these are but here are three things that seem like they
+could be useful
+
+   2. Grab and display images so the caption translation is in context.
+   3. Show/Hide mathml (it can get very long and hairy). (This module has a
+   bunch of math -- http://cnx.org/content/m11429/latest/ -- so you could
+   take a look at http://cnx.org/content/m11429/latest/index.cnxml)
+
+To get the cnxml for any module, go to
+cnx.org/content/<moduleid>/<version>/index.cnxml
+-- If you go to http://cnx.org/content you can click on "random module" to
+get to one.
