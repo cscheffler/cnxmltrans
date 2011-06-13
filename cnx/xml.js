@@ -5,7 +5,11 @@ CodeMirror.defineMode("xml", function(config, parserConfig) {
                       "meta": true, "col": true, "frame": true, "base": true, "area": true},
     doNotIndent: {"pre": true, "!cdata": true},
     allowUnquoted: true
-  } : {autoSelfClosers: {}, doNotIndent: {"!cdata": true}, allowUnquoted: false};
+  } : {
+      autoSelfClosers: {},
+      doNotIndent: {"!cdata": true},
+      allowUnquoted: false,
+  };
   var alignCDATA = parserConfig.alignCDATA;
 
   // Return variables for tokenizers
@@ -43,7 +47,10 @@ CodeMirror.defineMode("xml", function(config, parserConfig) {
         var c;
         while ((c = stream.eat(/[^\s\u00a0=<>\"\'\/?]/))) tagName += c;
         state.tokenize = inTag;
-        return "xml-tag";
+	if(tagName == "m:math")
+	    return "mathml";
+	else
+	    return "xml-tag";
       }
     }
     else if (ch == "&") {
@@ -62,11 +69,14 @@ CodeMirror.defineMode("xml", function(config, parserConfig) {
     if (ch == ">" || (ch == "/" && stream.eat(">"))) {
       state.tokenize = inText;
       type = ch == ">" ? "endTag" : "selfcloseTag";
-      return "xml-tag";
+      if(curState.tagName == "m:math")
+	  return "mathml";
+      else
+	  return "xml-tag";
     }
     else if (ch == "=") {
       type = "equals";
-      return null;
+      return "xml-equals";
     }
     else if (/[\'\"]/.test(ch)) {
       state.tokenize = inAttribute(ch);

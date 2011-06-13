@@ -1,5 +1,10 @@
-function setTagState(editor) {
-    /* setTagState(editor)
+var markerMathStart = "<span class=\"guttermath\">&and;</span>";
+var markerMathStop = "<span class=\"guttermath\">&or;</span>";
+var markerMathMiddle = "<span class=\"guttermath\">|</span>";
+var markerMathMinimized = "<span class=\"guttermath\">+</span>";
+
+function setEditorTagState(editor) {
+    /* setEditorTagState(editor)
      *
      * Set the internal flags of the translation editor based on the
      * current cursor location. The editor.transPreTag is set iff the
@@ -24,42 +29,6 @@ function setTagState(editor) {
 	// No text selected: check if cursor is before, after or inside a tag.
 	editor.transEditableSelection = true;
 
-	/*
-	 * This code, which adds lines from the editor when an XML tag
-	 * spans multiple lines, should not be necessary anymore since
-	 * the PHP code in index.php forces XML tags to be on one
-	 * line.
-
-	firstLineNumber = cursor.line;
-	lastLineNumber = cursor.line;
-	text = editor.getLine(cursor.line);
-
-	while(true) {
-	    firstOpen = text.indexOf("<");
-	    firstClose = text.indexOf(">");
-	    if(((firstOpen == -1) && (firstClose != -1)) || (firstOpen > firstClose)) {
-		if(firstLineNumber == 0)
-		    break;
-		firstLineNumber -= 1;
-		text = editor.getLine(firstLineNumber) + text;
-		continue;
-	    }
-
-	    lastOpen = text.lastIndexOf("<");
-	    lastClose = text.lastIndexOf(">");
-	    if(((lastOpen != -1) && (lastClose == -1)) || (lastOpen > lastClose)) {
-		if(lastLineNumber == editor.lineCount()-1)
-		    break;
-		lastLineNumber += 1;
-		text = text + editor.getLine(lastLineNumber);
-		continue;
-	    }
-
-	    break;
-	}
-	document.getElementById("info").value = "(" + firstLineNumber + ":" + lastLineNumber + "), (" + text + ")";
-	*/
-
 	// Check if right before a tag
 	editor.transPreTag = (text.indexOf("<", cursor.ch) == cursor.ch);
 
@@ -74,29 +43,132 @@ function setTagState(editor) {
 	editor.transEditableSelection = ((selectedText.indexOf("<") == -1) && (selectedText.indexOf(">") == -1));
     }
 
-    document.getElementById("info").value =  "in tag:                 " + editor.transInTag + "\n";
-    document.getElementById("info").value += "just before tag:        " + editor.transPreTag + "\n";
-    document.getElementById("info").value += "just after tag:         " + editor.transPostTag + "\n";
-    document.getElementById("info").value += "selection contains tag: " + !editor.transEditableSelection + "\n";
+    //document.getElementById("info").value +=  "in tag:                 " + editor.transInTag + "\n";
+    //document.getElementById("info").value += "just before tag:        " + editor.transPreTag + "\n";
+    //document.getElementById("info").value += "just after tag:         " + editor.transPostTag + "\n";
+    //document.getElementById("info").value += "selection contains tag: " + !editor.transEditableSelection + "\n";
+}
+
+function insertSurroundingTag(editor, tag) {
+    /* insertSurroundingTag(editor, tag)
+     *
+     * Insert an opening and closing tag pair with the name given by
+     * the tag argument. Any selected text will be placed *inbetween*
+     * the opening and closing tags. This function respects the
+     * readOnly state of the editor.
+     */
+    if(!editor.getOption("readOnly")) {
+	selectedText = editor.getSelection();
+	editor.replaceSelection("<" + tag + ">" + selectedText + "</" + tag + ">");
+    } else {
+	// Check if it is a tag that should be removed
+	selectedText = editor.getSelection();
+	var openTagStop = tag.length + 2;
+	var closeTagStart = selectedText.length - (tag.length+3);
+	if((selectedText.substring(0, openTagStop) == "<" + tag + ">") &&
+	   (selectedText.substring(closeTagStart) == "</" + tag + ">")) {
+	    editor.replaceSelection(selectedText.substring(openTagStop, closeTagStart));
+	}
+    }
+    editor.focus(); // Return focus from the clicked button to the editor
+}
+
+function showHideMathml(editor, lineNumber) {
+    /* showHideMathml(editor)
+     *
+     * If the cursor is inside a <m:math></m:math> tag, reduce it to a
+     * <m:math id="..."/> tag. If the cursor is inside a
+     * <m:math id="..."/> tag, restore it to its original state.
+     */
+    
+    if((editor.lineInfo(lineNumber).markerText == markerMathStart) ||
+       (editor.lineInfo(lineNumber).markerText == markerMathMiddle) ||
+       (editor.lineInfo(lineNumber).markerText == markerMathStop)) {
+	// Minimize a math block
+
+	// Find the first and last line numbers of the block
+	mathFirstLine = lineNumber;
+	while(editor.lineInfo(mathFirstLine).markerText != markerMathStart)
+	    mathFirstLine -= 1;
+	mathLastLine = lineNumber;
+	while(editor.lineInfo(mathLastLine).markerText != markerMathStop)
+	    mathLastLine += 1;
+
+	// Get the spaces before the tag (the line indent)
+	firstLine = editor.getLine(mathFirstLine);
+	lineIndent = firstLine.substring(0, firstLine.indexOf("<"));
+
+	// Store the current text and replace it with the minimized text
+	editor.storedMaths[editor.storedMathsCounter] =
+	    editor.getRange({line: mathFirstLine, ch: 0},
+			    {line: mathLastLine+1, ch: 0});
+	editor.replaceRange(lineIndent + "<m:math restore=\"" + editor.storedMathsCounter + "\">\n",
+			    {line: mathFirstLine, ch: 0},
+			    {line: mathLastLine+1, ch: 0});
+	editor.storedMathsCounter += 1;
+	editor.storedMathsEntries += 1;
+
+	// Set the gutter marker
+	editor.setMarker(mathFirstLine, markerMathMinimized);
+
+	editor.setCursor({line: mathFirstLine, ch: 0});
+	
+    } else if(editor.lineInfo(lineNumber).markerText == markerMathMinimized) {
+	// Restore a math block
+
+	// Get the storage id
+	line = editor.getLine(lineNumber);
+	storageId = parseInt(line.substring(line.indexOf('"')+1, line.lastIndexOf('"')));
+
+	// Replace the minimized text with the stored text
+	editor.replaceRange(editor.storedMaths[storageId],
+			    {line: lineNumber, ch: 0},
+			    {line: lineNumber+1, ch: 0});
+
+	// Set the gutter markers
+	lineCount = editor.storedMaths[storageId].split('\n').length - 1;
+	editor.setMarker(lineNumber, markerMathStart);
+	for(i = 1; i < lineCount-1; i++)
+	    editor.setMarker(lineNumber+i, markerMathMiddle);
+	editor.setMarker(lineNumber+lineCount-1, markerMathStop);
+
+	// Free some memory
+	delete editor.storedMaths[storageId];
+	editor.storedMathsEntries -= 1;
+	if(editor.storedMathsEntries == 0)
+	    editor.storedMathsCounter = 0;
+
+	editor.setCursor({line: lineNumber, ch: 0});
+
+    }
+    document.getElementById("info").value = editor.storedMathsEntries + " " + editor.storedMathsCounter;
+    /*
+    if(editor.getline(lineNumber).trim() == "<m:math restore=\"" ... "\"/>") {
+	// Restore a line
+	editor.storedMaths[id] = editor.text[mathStart:mathStop];
+	editor.replace(lineNumber, editor.storedMaths[id]);
+	del editor.storedMaths[id];
+    }
+    */
 }
 
 var editor = CodeMirror.fromTextArea(
     document.getElementById("code"), {
 	mode: "application/xml",
+	gutter: true,
 	onCursorActivity: function(editor) {
-	    setTagState(editor);
+	    setEditorTagState(editor);
             editor.setOption("readOnly", editor.transInTag || !editor.transEditableSelection);
 	},
 	onChange: function(editor) {
 	    if(editor) { // Need to guard against first call when editor does not yet exist
-		setTagState(editor);
+		setEditorTagState(editor);
 		editor.setOption("readOnly", editor.transInTag || !editor.transEditableSelection);
 	    }
 	},
 	onKeyEvent: function(editor, key) {
 	    var keyCode = key.keyCode || key.which;
-	    //document.getElementById("info").value += " " + key.type;
-	    //document.getElementById("info").value += " " + keyCode;
+	    //document.getElementById("info").value += key.type + " " + keyCode + "\n";
 	    deletePressed = false;
 	    backspacePressed = false;
 	    leftAnglePressed = false;
@@ -118,6 +190,26 @@ var editor = CodeMirror.fromTextArea(
 	       leftAnglePressed || rightAnglePressed) {
 		key.stop();
 	    }
-	}
+	},
+	onGutterClick: function(editor, line) {
+	    showHideMathml(editor, line);
+	},
     }
 );
+
+// Do initial formatting of editor gutter
+editor.storedMaths = {};
+editor.storedMathsCounter = 0;
+editor.storedMathsEntries = 0;
+active = false;
+for(line = 0; line < editor.lineCount(); line++) {
+    text = editor.getLine(line).replace(/^\s+|\s+$/g, ''); // trim white space
+    if(text.substring(0, 7) == "<m:math") {
+	editor.setMarker(line, markerMathStart);
+	active = true;
+    } else if(text.substring(0, 9) == "</m:math>") {
+	editor.setMarker(line, markerMathStop);
+	active = false;
+    } else if(active)
+	editor.setMarker(line, markerMathMiddle);
+}

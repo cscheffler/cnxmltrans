@@ -1,7 +1,10 @@
-span.xml-tag {color: #888;}
-span.xml-attribute {color: #888;}
-span.xml-attname {color: #888;}
-span.xml-comment {color: #888;}
-span.xml-cdata {color: #888;}
-span.xml-processing {color: #888;}
-span.xml-entity {color: #a22;}
+span.xml-tag {color: #aaa;}
+span.xml-attribute {color: #aaa;}
+span.xml-equals {color: #aaa;}
+span.xml-attname {color: #aaa;}
+span.xml-comment {color: #aaa;}
+span.xml-cdata {color: #aaa;}
+span.xml-processing {color: #aaa;}
+span.xml-entity {color: #900;}
+span.mathml {color: #090;}
+span.guttermath {color: #090; cursor: row-resize;}

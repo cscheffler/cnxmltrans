@@ -1,35 +1,39 @@
 Prioritised tasks:
 
- 4. xml: Initial search for and evaluation of XML editors for expert
+ 1. xml: Initial search for and evaluation of XML editors for expert
     users
 
- 5. ed: Tag creation and deletion from special allowed set:
-    <emphasis></emphasis>
+ 2. ed: deleting an allowed tag pair does not work if the tag contains
+    attributes.
 
- 6. ed: show/hide mathml blocks (simply by allowing the user to click
-    a show/hide button)
+ 3. ed: the show/hide of maths requires internal state and modifies
+    the text in the editor. Still need a post-process method for when
+    the user saves or publishes the text (in order to replace the
+    hidden mathml).
 
- 7. ed: autosave and recovery
-
- 8. ed: fix weird bug. when holding down shift and the left arrow to
+ 4. ed: fix weird bug. when holding down shift and the left arrow to
     select text, the selection does not grow to the left as it
     should. however, when releasing the left arrow (while still
     holding shift) and then pressing and holding it again poses no
     problems. this effect does not occur when using the right
-    arrow. should check whether this is a bug in the base codemirror
-    editor.
+    arrow. This is in fact a bug inside CodeMirror itself.
 
- 9. xml: Pull cnxml using SWORD. The editor should pull the MDML
+    UPDATE: Install the new version of CodeMirror (2.1) and check if
+    the bug persists.
+
+ 5. ed: autosave and recovery
+
+ 6. xml: Pull cnxml using SWORD. The editor should pull the MDML
     automatically.
 
- 10. xml: Pull cnxml from personal (or other) workspace using the
-     user's credentials (username and password) using SWORD.
+ 7. xml: Pull cnxml from personal (or other) workspace using the
+    user's credentials (username and password) using SWORD.
 
- 11. xml: Push back to Connexions using SWORD.
+ 8. xml: Push back to Connexions using SWORD.
 
- 12. ed: SWORD pull/push in the translation editor.
+ 9. ed: SWORD pull/push in the translation editor.
 
- 13. ed and xml: publishing through SWORD.
+ 10. ed and xml: publishing through SWORD.
 
 
 Unprioritised tasks (nice to haves):
