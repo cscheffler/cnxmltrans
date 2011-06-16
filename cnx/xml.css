@@ -1,10 +1,8 @@
-span.xml-tag {color: #aaa;}
-span.xml-attribute {color: #aaa;}
-span.xml-equals {color: #aaa;}
-span.xml-attname {color: #aaa;}
-span.xml-comment {color: #aaa;}
-span.xml-cdata {color: #aaa;}
-span.xml-processing {color: #aaa;}
-span.xml-entity {color: #900;}
-span.mathml {color: #090;}
+.cm-s-default span.cm-atom {color: #900;}
+.cm-s-default span.cm-comment {color: #aaa;}
+.cm-s-default span.cm-string {color: #aaa;}
+.cm-s-default span.cm-meta {color: #aaa;}
+.cm-s-default span.cm-tag {color: #aaa;}
+.cm-s-default span.cm-attribute {color: #aaa;}
+.cm-s-default span.cm-mathml {color: #090;}
 span.guttermath {color: #090; cursor: row-resize;}

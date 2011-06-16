@@ -99,7 +99,7 @@ $text = $newText;
     <script src="xml.js"></script>
     <link rel="stylesheet" href="xml.css">
     <style type="text/css">.CodeMirror {border-top: 1px solid black; border-bottom: 1px solid black;}</style>
-    <link rel="stylesheet" href="../css/docs.css">
+    <link rel="stylesheet" href="css/docs.css">
   </head>
   <body>
     <h2>CNXML Editor</h2>

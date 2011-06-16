@@ -3,6 +3,9 @@
     the user saves or publishes the text (in order to replace the
     hidden mathml).
 
+ 4a ed: Migrated to CodeMirror-2.1. This did not fix the weird
+    shift-select bug (see 4b).
+
 ---
 
 Prioritised tasks:
@@ -13,15 +16,12 @@ Prioritised tasks:
  2. ed: deleting an allowed tag pair does not work if the tag contains
     attributes.
 
- 4. ed: fix weird bug. when holding down shift and the left arrow to
+ 4b ed: fix weird bug. when holding down shift and the left arrow to
     select text, the selection does not grow to the left as it
     should. however, when releasing the left arrow (while still
     holding shift) and then pressing and holding it again poses no
     problems. this effect does not occur when using the right
     arrow. This is in fact a bug inside CodeMirror itself.
-
-    UPDATE: Install the new version of CodeMirror (2.1) and check if
-    the bug persists.
 
  5. ed: autosave and recovery
 
