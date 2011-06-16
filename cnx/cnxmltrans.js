@@ -152,6 +152,50 @@ function showHideMathml(editor, lineNumber) {
     */
 }
 
+function getText(editor) {
+    /* getText(editor)
+     *
+     * Post-process the editor text, to replace all the hidden
+     * math. Do this before pushing the xml back to Connexions.
+     */
+    text = '';
+    for(lineNumber = 0; lineNumber < editor.lineCount(); lineNumber++) {
+	if(editor.lineInfo(lineNumber).markerText == markerMathMinimized) {
+	    line = editor.getLine(lineNumber);
+	    storageId = parseInt(line.substring(line.indexOf('"')+1, line.lastIndexOf('"')));
+	    text += editor.storedMaths[storageId];
+	} else
+	    text += editor.getLine(lineNumber) + "\n";
+    }
+    return text;
+}
+
+/*
+// Abandoned save/load cookie code
+function saveToCookie(editor) {
+    text = getText(editor);
+    exdate = new Date();
+    exdate.setDate(exdate.getDate() + 30); // 30 days before cookie expires
+    expiryString = "; expires=" + exdate.toUTCString();
+    bufferSize = 3900;
+    pos = 0;
+    while(pos < len(text)) {
+	if(len(text)-pos > bufferSize) {
+	    saveText = text.substring(pos, pos+bufferSize);
+	    pos += 3900;
+	} else {
+	    saveText = text.substring(pos);
+	    pos = len(text);
+	}
+	cookieValue = saveText + expiryString;
+	document.cookie = 
+    }
+}
+
+function loadFromCookie(editor) {
+}
+*/
+
 var editor = CodeMirror.fromTextArea(
     document.getElementById("code"), {
 	mode: "application/xml",

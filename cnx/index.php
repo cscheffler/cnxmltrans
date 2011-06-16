@@ -1,5 +1,7 @@
 <?php
 
+$DEBUG = false;
+
 $url = $_GET["getUrl"];
 if($url) {
   if(substr($url, -5) == "/view")
@@ -7,7 +9,10 @@ if($url) {
   elseif(substr($url, -1) == "/")
     $url = $url . "index.cnxml";
 
-  $fp = fopen($url, "rb");
+  if($DEBUG)
+    $fp = fopen("index.cnxml", "rb");
+  else
+    $fp = fopen($url, "rb");
   $text = "";
   while(!feof($fp)) {
     $text .= fread($fp, 8192);
@@ -108,10 +113,11 @@ $text = $newText;
       <br/>
       <textarea id="code" name="code" onClick="alert(\"blah\");"><?php echo htmlentities($text); ?></textarea>
       <br/>
-
-      <h2>Debug Info (please ignore)</h2>
+<?php if($DEBUG) { ?>
+      <h2>Debug Info</h2>
       <textarea id="info" name="info" rows="10" cols="80"></textarea>
       <br><input type="text" id="keycode" size="15" />
+<?php } ?>
     </form>
     <script type="text/javascript" src="cnxmltrans.js">
     </script>

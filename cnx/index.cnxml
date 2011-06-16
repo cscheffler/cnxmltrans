@@ -1,0 +1,708 @@
+<?xml version="1.0"?>
+<document xmlns="http://cnx.rice.edu/cnxml" xmlns:m="http://www.w3.org/1998/Math/MathML" xmlns:md="http://cnx.rice.edu/mdml/0.4" xmlns:bib="http://bibtexml.sf.net/" xmlns:q="http://cnx.rice.edu/qml/1.0" xmlns:md1="http://cnx.rice.edu/mdml" id="id62148" module-id="m12345" cnxml-version="0.7">
+  <title>Rational Numbers</title>
+<metadata xmlns:md="http://cnx.rice.edu/mdml"
+          mdml-version="0.5">
+  <!-- WARNING! The 'metadata' section is read only. Do not edit below.
+       Changes to the metadata section in the source will not be saved. -->
+  <md:repository>http://cnx.org/content</md:repository>
+  <md:content-url>http://cnx.org/content/m31331/latest/</md:content-url>
+  <md:content-id>m31331</md:content-id>
+  <md:title>Rational Numbers</md:title>
+  <md:version>1.5</md:version>
+  <md:created>2009/03/18 13:23:59 GMT-5</md:created>
+  <md:revised>2011/04/20 04:46:40.334 GMT-5</md:revised>
+  <md:actors>
+    <md:person userid="roryadm">
+      <md:firstname>Rory</md:firstname>
+      <md:surname>Adams</md:surname>
+      <md:fullname>Rory Adams</md:fullname>
+      <md:email>roryadm@gmail.com</md:email>
+    </md:person>
+    <md:person userid="marknewlyn">
+      <md:firstname>Mark</md:firstname>
+      <md:surname>Horner</md:surname>
+      <md:fullname>Mark Horner</md:fullname>
+      <md:email>marknewlyn@yahoo.co.uk</md:email>
+    </md:person>
+    <md:organization userid="fhsst">
+      <md:shortname>FHSST</md:shortname>
+      <md:fullname>Free High School Science Texts Project</md:fullname>
+      <md:email>mark@fhsst.org</md:email>
+    </md:organization>
+    <md:person userid="wllhea002">
+      <md:firstname>Heather</md:firstname>
+      <md:surname>Williams</md:surname>
+      <md:fullname>Heather Williams</md:fullname>
+      <md:email>wllhea002@gmail.com</md:email>
+    </md:person>
+  </md:actors>
+  <md:roles>
+    <md:role type="author">roryadm fhsst marknewlyn wllhea002</md:role>
+    <md:role type="maintainer">roryadm fhsst marknewlyn wllhea002</md:role>
+    <md:role type="licensor">roryadm fhsst marknewlyn wllhea002</md:role>
+  </md:roles>
+  <md:license url="http://creativecommons.org/licenses/by/3.0/" />
+  <!-- For information on license requirements for use or modification, see license url in the
+       above <md:license> element.
+       For information on formatting required attribution, see the URL:
+         CONTENT_URL/content_info#cnx_cite_header
+       where CONTENT_URL is the value provided above in the <md:content-url> element.
+  -->
+  <md:keywordlist>
+    <md:keyword>Grade 10</md:keyword>
+    <md:keyword>Rational Numbers</md:keyword>
+    <md:keyword>South Africa</md:keyword>
+  </md:keywordlist>
+  <md:subjectlist>
+    <md:subject>Mathematics and Statistics</md:subject>
+  </md:subjectlist>
+  <md:abstract></md:abstract>
+  <md:language>en</md:language>
+  <!-- WARNING! The 'metadata' section is read only. Do not edit above.
+       Changes to the metadata section in the source will not be saved. -->
+</metadata>
+
+<content>
+    <section id="cid2">
+      <title>Introduction</title>
+      <para id="id62184">As described in the chapter on review of past work, a number is a way of representing quantity. The numbers that will be used in high school are all real numbers, but there are many different ways of writing any single real number.</para>
+      <para id="id62191">This chapter describes <emphasis effect="italics">rational numbers</emphasis>.</para><para id="eip-195"><figure id="circuits-1" class="khanacademy"><title>Khan Academy video on Integers and Rational Numbers</title><media id="yt-media1" display="block" alt="Integers and Rational Numbers">
+<flash id="yt-video1" mime-type="application/x-shockwave-flash" src="http://www.youtube.com/v/kyu-IQ-gBIg&amp;arel=0&amp;hl=en_US&amp;feature=player_embedded&amp;version=3" width="425" height="344">
+<param name="allowscriptaccess" value="always"/>
+<param name="allowsfullscreen" value="true"/>
+</flash>
+</media>
+</figure></para>
+    </section>
+    <section id="cid3">
+      <title>The Big Picture of Numbers</title>
+      <para id="id62547">
+        <figure id="id62548">
+          <media id="id62548_media" alt="">
+            <image mime-type="image/png" src="MG10C3_001.png" id="id62548_onlineimage" width="386"><!-- NOTE: attribute width changes image size online (pixels). original width is 386. --></image>
+            <image mime-type="application/postscript" for="pdf" src="MG10C3_001.eps" id="id62548_printimage"/>
+          </media>
+        </figure>
+      </para>
+      <para id="id62554">The term whole number does not have a consistent definition. Various authors use
+it in many different ways. We use the following definitions:</para>
+      <list id="id62559" display="block" list-type="bulleted">
+        <item id="uid1">natural numbers are (1, 2, 3, ...)
+</item>
+        <item id="uid2">whole numbers are (0, 1, 2, 3, ...)
+</item>
+        <item id="uid3">integers are (... -3, -2, -1, 0, 1, 2, 3, ....)
+</item>
+      </list>
+    </section>
+    <section id="cid4">
+      <title>Definition</title>
+      <para id="id62607">The following numbers are all rational numbers.</para>
+      <equation id="uid4">
+        <m:math overflow="scroll" mode="display">
+          <m:mrow>
+            <m:mfrac>
+              <m:mn>10</m:mn>
+              <m:mn>1</m:mn>
+            </m:mfrac>
+            <m:mo>,</m:mo>
+            <m:mspace width="1.em"/>
+            <m:mfrac>
+              <m:mn>21</m:mn>
+              <m:mn>7</m:mn>
+            </m:mfrac>
+            <m:mo>,</m:mo>
+            <m:mspace width="1.em"/>
+            <m:mfrac>
+              <m:mrow>
+                <m:mo>-</m:mo>
+                <m:mn>1</m:mn>
+              </m:mrow>
+              <m:mrow>
+                <m:mo>-</m:mo>
+                <m:mn>3</m:mn>
+              </m:mrow>
+            </m:mfrac>
+            <m:mo>,</m:mo>
+            <m:mspace width="1.em"/>
+            <m:mfrac>
+              <m:mn>10</m:mn>
+              <m:mn>20</m:mn>
+            </m:mfrac>
+            <m:mo>,</m:mo>
+            <m:mspace width="1.em"/>
+            <m:mfrac>
+              <m:mrow>
+                <m:mo>-</m:mo>
+                <m:mn>3</m:mn>
+              </m:mrow>
+              <m:mn>6</m:mn>
+            </m:mfrac>
+          </m:mrow>
+        </m:math>
+      </equation>
+      <para id="id62687">You can see that all denominators and all numerators are integers.</para>
+<definition id="fhsst_id138"><term id="termfhsst_id138"> Rational Number </term> <meaning id="meaningfhsst_id138">
+      <para id="id62709">A rational number is any number which can be written as:</para>
+      <equation id="uid6">
+        <m:math overflow="scroll" mode="display">
+          <m:mfrac>
+            <m:mi>a</m:mi>
+            <m:mi>b</m:mi>
+          </m:mfrac>
+        </m:math>
+      </equation>
+      <para id="id62732">where <m:math overflow="scroll"><m:mi>a</m:mi></m:math> and <m:math overflow="scroll"><m:mi>b</m:mi></m:math> are integers and <m:math overflow="scroll"><m:mrow><m:mi>b</m:mi><m:mo>≠</m:mo><m:mn>0</m:mn></m:mrow></m:math>. </para>
+      </meaning></definition>
+<note id="notfhsst_id150" type="tip">Only fractions which have a numerator and a denominator (that is not 0) that are integers
+are rational numbers.</note>
+      <para id="id62778">This means that all integers are rational numbers, because they can be written with a denominator of 1.</para>
+      <para id="id62782">Therefore</para>
+      <equation id="uid7">
+        <m:math overflow="scroll" mode="display">
+          <m:mrow>
+            <m:mfrac>
+              <m:msqrt>
+                <m:mn>2</m:mn>
+              </m:msqrt>
+              <m:mn>7</m:mn>
+            </m:mfrac>
+            <m:mo>,</m:mo>
+            <m:mspace width="1.em"/>
+            <m:mfrac>
+              <m:mi>π</m:mi>
+              <m:mn>20</m:mn>
+            </m:mfrac>
+          </m:mrow>
+        </m:math>
+      </equation>
+      <para id="id62817">are <emphasis effect="bold">not examples</emphasis> of rational numbers, because in each case, either the numerator or the denominator is not an integer.</para>
+      <para id="id62829">A number may not be written as an integer divided by another integer, but may still
+be a rational number. This is because the results may be expressed
+as an integer divided by an integer. The rule is, if a number can be written
+as a fraction of integers, it is rational even if it can also be written in another
+way as well. Here are two examples that might not look like rational numbers
+at first glance but are because there are equivalent forms that are expressed as an
+integer divided by another integer:</para>
+      <equation id="uid8">
+        <m:math overflow="scroll" mode="display">
+          <m:mrow>
+            <m:mspace width="1.em"/>
+            <m:mfrac>
+              <m:mrow>
+                <m:mo>-</m:mo>
+                <m:mn>1</m:mn>
+                <m:mo>,</m:mo>
+                <m:mn>33</m:mn>
+              </m:mrow>
+              <m:mrow>
+                <m:mo>-</m:mo>
+                <m:mn>3</m:mn>
+              </m:mrow>
+            </m:mfrac>
+            <m:mo>=</m:mo>
+            <m:mfrac>
+              <m:mn>133</m:mn>
+              <m:mn>300</m:mn>
+            </m:mfrac>
+            <m:mo>,</m:mo>
+            <m:mspace width="1.em"/>
+            <m:mfrac>
+              <m:mrow>
+                <m:mo>-</m:mo>
+                <m:mn>3</m:mn>
+              </m:mrow>
+              <m:mrow>
+                <m:mn>6</m:mn>
+                <m:mo>,</m:mo>
+                <m:mn>39</m:mn>
+              </m:mrow>
+            </m:mfrac>
+            <m:mo>=</m:mo>
+            <m:mfrac>
+              <m:mrow>
+                <m:mo>-</m:mo>
+                <m:mn>300</m:mn>
+              </m:mrow>
+              <m:mn>639</m:mn>
+            </m:mfrac>
+            <m:mo>=</m:mo>
+            <m:mrow>
+              <m:mo>-</m:mo>
+              <m:mn>100</m:mn>
+            </m:mrow>
+            <m:mn>213</m:mn>
+          </m:mrow>
+        </m:math>
+      </equation>
+      
+<section id="secfhsst_id232"><title>Rational Numbers </title><list id="id63121" display="block" list-type="enumerated"><item id="uid9">If <m:math overflow="scroll"><m:mi>a</m:mi></m:math> is an integer, <m:math overflow="scroll"><m:mi>b</m:mi></m:math> is an integer and <m:math overflow="scroll"><m:mi>c</m:mi></m:math> is irrational, which of the following are rational numbers?
+<table id="id63160" summary=""><tgroup cols="4"><tbody><row><entry>(i) <m:math overflow="scroll"><m:mfrac><m:mn>5</m:mn><m:mn>6</m:mn></m:mfrac></m:math></entry><entry>(ii) <m:math overflow="scroll"><m:mfrac><m:mi>a</m:mi><m:mn>3</m:mn></m:mfrac></m:math></entry><entry>(iii) <m:math overflow="scroll"><m:mfrac><m:mi>b</m:mi><m:mn>2</m:mn></m:mfrac></m:math></entry><entry>(iv) <m:math overflow="scroll"><m:mfrac><m:mn>1</m:mn><m:mi>c</m:mi></m:mfrac></m:math></entry></row></tbody></tgroup></table>
+<link window="new" class="fullmarks" resource="http://www.fhsst.org/l35">Click here for the solution</link></item>
+        <item id="uid10">If <m:math overflow="scroll"><m:mfrac><m:mi>a</m:mi><m:mn>1</m:mn></m:mfrac></m:math> is a rational number, which of the following are valid values for <m:math overflow="scroll"><m:mi>a</m:mi></m:math>?
+<table id="id63268" summary=""><tgroup cols="4"><tbody><row><entry>(i) 1</entry><entry>(ii) <m:math overflow="scroll"><m:mrow><m:mo>-</m:mo><m:mn>10</m:mn></m:mrow></m:math></entry><entry>(iii) <m:math overflow="scroll"><m:msqrt><m:mn>2</m:mn></m:msqrt></m:math></entry><entry>(iv) <m:math overflow="scroll"><m:mrow><m:mn>2</m:mn><m:mo>,</m:mo><m:mn>1</m:mn></m:mrow></m:math></entry></row></tbody></tgroup></table>
+<link window="new" class="fullmarks" resource="http://www.fhsst.org/l3N">Click here for the solution</link></item>
+      </list>
+      
+</section>
+    </section>
+    <section id="cid5">
+      <title>Forms of Rational Numbers</title>
+      <para id="id63345">All integers and fractions with integer numerators and denominators are rational numbers. There are two more forms of rational numbers.</para>
+<section id="secfhsst_id245"><title> Investigation : Decimal Numbers </title>
+      <para id="id63357">You can write the rational number
+<m:math overflow="scroll"><m:mfrac><m:mn>1</m:mn><m:mn>2</m:mn></m:mfrac></m:math> as the decimal number 0,5. Write the following numbers as
+decimals:</para>
+      <list id="id63375" display="block" list-type="enumerated">
+        <item id="uid11">
+          <m:math overflow="scroll">
+            <m:mfrac>
+              <m:mn>1</m:mn>
+              <m:mn>4</m:mn>
+            </m:mfrac>
+          </m:math>
+        </item>
+        <item id="uid12">
+          <m:math overflow="scroll">
+            <m:mfrac>
+              <m:mn>1</m:mn>
+              <m:mn>10</m:mn>
+            </m:mfrac>
+          </m:math>
+        </item>
+        <item id="uid13">
+          <m:math overflow="scroll">
+            <m:mfrac>
+              <m:mn>2</m:mn>
+              <m:mn>5</m:mn>
+            </m:mfrac>
+          </m:math>
+        </item>
+        <item id="uid14">
+          <m:math overflow="scroll">
+            <m:mfrac>
+              <m:mn>1</m:mn>
+              <m:mn>100</m:mn>
+            </m:mfrac>
+          </m:math>
+        </item>
+        <item id="uid15">
+          <m:math overflow="scroll">
+            <m:mfrac>
+              <m:mn>2</m:mn>
+              <m:mn>3</m:mn>
+            </m:mfrac>
+          </m:math>
+        </item>
+      </list>
+      <para id="id63486">Do the numbers after the decimal comma end or do they continue? If they continue, is there a repeating pattern to the numbers? </para>
+</section>
+      <para id="id63495">You can write a rational number as a decimal number. Two types of decimal numbers can be written as rational numbers:</para>
+      <list id="id63500" display="block" list-type="enumerated"><item id="uid16">decimal numbers that end or <emphasis effect="italics">terminate</emphasis>, for example the fraction <m:math overflow="scroll"><m:mfrac><m:mn>4</m:mn><m:mn>10</m:mn></m:mfrac></m:math> can be written as 0,4.
+</item>
+        <item id="uid17">decimal numbers that have a repeating pattern of numbers, for example the fraction <m:math overflow="scroll"><m:mfrac><m:mn>1</m:mn><m:mn>3</m:mn></m:mfrac></m:math> can be written as 
+
+<m:math overflow="scroll">
+  <m:mrow><m:mn>0</m:mn><m:mo>,</m:mo><m:mover accent="true"><m:mn>3</m:mn><m:mo>˙</m:mo></m:mover></m:mrow></m:math>. 
+The dot represents recurring <m:math overflow="scroll">
+  <m:mrow><m:mn>3</m:mn></m:mrow></m:math>'s i.e.,
+<m:math overflow="scroll">
+  <m:mrow><m:mn>0</m:mn><m:mo>,</m:mo><m:mn>333</m:mn><m:mo>...</m:mo> <m:mo>=</m:mo> <m:mn>0</m:mn><m:mo>,</m:mo><m:mover accent="true"><m:mn>3</m:mn><m:mo>˙</m:mo></m:mover></m:mrow></m:math>.
+</item>
+      </list>
+      <para id="id63576">For example, the rational number <m:math overflow="scroll"><m:mfrac><m:mn>5</m:mn><m:mn>6</m:mn></m:mfrac></m:math> can be written in decimal notation as <m:math overflow="scroll"><m:mrow><m:mn>0</m:mn><m:mo>,</m:mo><m:mn>8</m:mn><m:mover accent="true"><m:mn>3</m:mn><m:mo>˙</m:mo></m:mover></m:mrow></m:math> and similarly, the decimal number 0,25 can be written as a rational number as <m:math overflow="scroll"><m:mfrac><m:mn>1</m:mn><m:mn>4</m:mn></m:mfrac></m:math>.</para>
+<note id="notfhsst_id301" type="tip"><title>Notation for Repeating Decimals</title>You can use a bar over the repeated numbers to indicate that the decimal is a repeating decimal.</note>
+      
+    </section>
+    <section id="cid6">
+      <title>Converting Terminating Decimals into Rational Numbers</title>
+      <para id="id63646">A decimal number has an integer part and a fractional part. For example <m:math overflow="scroll"><m:mrow><m:mn>10</m:mn><m:mo>,</m:mo><m:mn>589</m:mn></m:mrow></m:math> has an integer part of 10 and a fractional part of <m:math overflow="scroll"><m:mrow><m:mn>0</m:mn><m:mo>,</m:mo><m:mn>589</m:mn></m:mrow></m:math> because <m:math overflow="scroll"><m:mrow><m:mn>10</m:mn><m:mo>+</m:mo><m:mn>0</m:mn><m:mo>,</m:mo><m:mn>589</m:mn><m:mo>=</m:mo><m:mn>10</m:mn><m:mo>,</m:mo><m:mn>589</m:mn></m:mrow></m:math>. The fractional part can be written as a rational number, i.e. with a numerator and a denominator that are integers.</para>
+      <para id="id63704">Each digit after the decimal point is a fraction with a denominator in increasing powers of ten. For example:</para>
+      <list id="id63708" display="block" list-type="bulleted">
+        <item id="uid18"><m:math overflow="scroll"><m:mfrac><m:mn>1</m:mn><m:mn>10</m:mn></m:mfrac></m:math> is <m:math overflow="scroll"><m:mrow><m:mn>0</m:mn><m:mo>,</m:mo><m:mn>1</m:mn></m:mrow></m:math></item>
+        <item id="uid19"><m:math overflow="scroll"><m:mfrac><m:mn>1</m:mn><m:mn>100</m:mn></m:mfrac></m:math> is <m:math overflow="scroll"><m:mrow><m:mn>0</m:mn><m:mo>,</m:mo><m:mn>01</m:mn></m:mrow></m:math></item>
+      </list>
+      <para id="id63781">This means that:</para>
+      <equation id="id63784"><m:math overflow="scroll" mode="display">
+          <m:mtable displaystyle="true">
+            <m:mtr>
+              <m:mtd columnalign="right">
+                <m:mrow>
+                  <m:mn>10</m:mn>
+                  <m:mo>,</m:mo>
+                  <m:mn>589</m:mn>
+                </m:mrow>
+              </m:mtd>
+              <m:mtd>
+                <m:mo>=</m:mo>
+              </m:mtd>
+              <m:mtd columnalign="left">
+                <m:mrow>
+                  <m:mn>10</m:mn>
+                  <m:mo>+</m:mo>
+                  <m:mfrac>
+                    <m:mn>5</m:mn>
+                    <m:mn>10</m:mn>
+                  </m:mfrac>
+                  <m:mo>+</m:mo>
+                  <m:mfrac>
+                    <m:mn>8</m:mn>
+                    <m:mn>100</m:mn>
+                  </m:mfrac>
+                  <m:mo>+</m:mo>
+                  <m:mfrac>
+                    <m:mn>9</m:mn>
+                    <m:mn>1000</m:mn>
+                  </m:mfrac>
+                </m:mrow>
+              </m:mtd>
+            </m:mtr>
+            <m:mtr>
+              <m:mtd/>
+              <m:mtd>
+                <m:mo>=</m:mo>
+              </m:mtd>
+              <m:mtd columnalign="left">
+                <m:mrow>
+                  <m:mn>10</m:mn>
+                  <m:mfrac>
+                    <m:mn>589</m:mn>
+                    <m:mn>1000</m:mn>
+                  </m:mfrac>
+                </m:mrow>
+              </m:mtd>
+            </m:mtr>
+            <m:mtr>
+              <m:mtd/>
+              <m:mtd>
+                <m:mo>=</m:mo>
+              </m:mtd>
+              <m:mtd columnalign="left">
+                <m:mfrac>
+                  <m:mn>10589</m:mn>
+                  <m:mn>1000</m:mn>
+                </m:mfrac>
+              </m:mtd>
+            </m:mtr>
+          </m:mtable>
+        </m:math>
+      </equation>
+<section id="secfhsst_id378"><title> Fractions </title>
+      <list id="id63882" display="block" list-type="enumerated"><item id="uid20">Write the following as fractions:
+<table id="id63896" summary=""><tgroup cols="4"><tbody><row><entry>(a) <m:math overflow="scroll"><m:mrow><m:mn>0</m:mn><m:mo>,</m:mo><m:mn>1</m:mn></m:mrow></m:math></entry><entry>(b) <m:math overflow="scroll"><m:mrow><m:mn>0</m:mn><m:mo>,</m:mo><m:mn>12</m:mn></m:mrow></m:math></entry><entry>(c) <m:math overflow="scroll"><m:mrow><m:mn>0</m:mn><m:mo>,</m:mo><m:mn>58</m:mn></m:mrow></m:math></entry><entry>(d) <m:math overflow="scroll"><m:mrow><m:mn>0</m:mn><m:mo>,</m:mo><m:mn>2589</m:mn></m:mrow></m:math></entry></row></tbody></tgroup></table>
+<link window="new" class="fullmarks" resource="http://www.fhsst.org/l3R">Click here for the solution</link></item>
+      </list>
+      
+</section>
+    </section>
+    <section id="cid7">
+      <title>Converting Repeating Decimals into Rational Numbers</title>
+      <para id="id63993">When the decimal is a repeating decimal, a bit more work is needed to write the fractional part of the decimal number as a fraction. We will explain by means of an example.</para>
+      <para id="id63998">If we wish to write <m:math overflow="scroll"><m:mrow><m:mn>0</m:mn><m:mo>,</m:mo><m:mover accent="true"><m:mn>3</m:mn><m:mo>˙</m:mo></m:mover></m:mrow></m:math> in the form <m:math overflow="scroll"><m:mfrac><m:mi>a</m:mi><m:mi>b</m:mi></m:mfrac></m:math> (where <m:math overflow="scroll"><m:mi>a</m:mi></m:math> and <m:math overflow="scroll"><m:mi>b</m:mi></m:math> are integers) then we would proceed as follows
+</para>
+      <equation id="uid21"><m:math overflow="scroll" mode="display">
+          <m:mtable displaystyle="true">
+            <m:mtr>
+              <m:mtd columnalign="right">
+                <m:mi>x</m:mi>
+              </m:mtd>
+              <m:mtd>
+                <m:mo>=</m:mo>
+              </m:mtd>
+              <m:mtd columnalign="left">
+                <m:mrow>
+                  <m:mn>0</m:mn>
+                  <m:mo>,</m:mo>
+                  <m:mn>33333</m:mn>
+                  <m:mo>...</m:mo>
+                </m:mrow>
+              </m:mtd>
+            </m:mtr>
+            <m:mtr>
+              <m:mtd columnalign="right">
+                <m:mrow>
+                  <m:mn>10</m:mn>
+                  <m:mi>x</m:mi>
+                </m:mrow>
+              </m:mtd>
+              <m:mtd>
+                <m:mo>=</m:mo>
+              </m:mtd>
+              <m:mtd columnalign="left">
+                <m:mrow>
+                  <m:mn>3</m:mn>
+                  <m:mo>,</m:mo>
+                  <m:mn>33333</m:mn>
+                  <m:mo>...</m:mo>
+                  <m:mspace width="2.em"/>
+                  <m:mtext>multiply</m:mtext>
+                  <m:mspace width="4.pt"/>
+                  <m:mtext>by</m:mtext>
+                  <m:mspace width="4.pt"/>
+                  <m:mtext>10</m:mtext>
+                  <m:mspace width="4.pt"/>
+                  <m:mtext>on</m:mtext>
+                  <m:mspace width="4.pt"/>
+                  <m:mtext>both</m:mtext>
+                  <m:mspace width="4.pt"/>
+                  <m:mtext>sides</m:mtext>
+                </m:mrow>
+              </m:mtd>
+            </m:mtr>
+            <m:mtr>
+              <m:mtd columnalign="right">
+                <m:mrow>
+                  <m:mn>9</m:mn>
+                  <m:mi>x</m:mi>
+                </m:mrow>
+              </m:mtd>
+              <m:mtd>
+                <m:mo>=</m:mo>
+              </m:mtd>
+              <m:mtd columnalign="left">
+                <m:mrow>
+                  <m:mn>3</m:mn>
+                  <m:mspace width="2.em"/>
+                  <m:mspace width="2.em"/>
+                  <m:mspace width="2.em"/>
+                  <m:mtext>(</m:mtext>
+<m:mtext>subtracting</m:mtext>
+<m:mspace width="4.pt"/>
+                  <m:mtext>the</m:mtext>
+<m:mspace width="4.pt"/>
+<m:mtext>second</m:mtext>
+<m:mspace width="4.pt"/>
+<m:mtext>equation</m:mtext>
+<m:mspace width="4.pt"/>
+<m:mtext>from</m:mtext>
+<m:mspace width="4.pt"/>
+<m:mtext>the</m:mtext>
+<m:mspace width="4.pt"/>
+<m:mtext>first</m:mtext>
+<m:mspace width="4.pt"/>
+<m:mtext>equation</m:mtext>
+                  <m:mtext>)</m:mtext>
+                </m:mrow>
+              </m:mtd>
+            </m:mtr>
+            <m:mtr>
+              <m:mtd columnalign="right">
+                <m:mi>x</m:mi>
+              </m:mtd>
+              <m:mtd>
+                <m:mo>=</m:mo>
+              </m:mtd>
+              <m:mtd columnalign="left">
+                <m:mrow>
+                  <m:mfrac>
+                    <m:mn>3</m:mn>
+                    <m:mn>9</m:mn>
+                  </m:mfrac>
+                  <m:mo>=</m:mo>
+                  <m:mfrac>
+                    <m:mn>1</m:mn>
+                    <m:mn>3</m:mn>
+                  </m:mfrac>
+                </m:mrow>
+              </m:mtd>
+            </m:mtr>
+          </m:mtable>
+        </m:math>
+      </equation>
+      <para id="id64237">And another example would be to write 
+<m:math overflow="scroll">
+    <m:mrow>
+        <m:mn>5</m:mn><m:mo>,</m:mo>
+        <m:mover accent="true"><m:mn>4</m:mn><m:mo>˙</m:mo></m:mover>  
+        <m:mover accent="true"><m:mn>3</m:mn><m:mo>˙</m:mo></m:mover>  
+        <m:mover accent="true"><m:mn>2</m:mn><m:mo>˙</m:mo></m:mover>  
+    </m:mrow>
+</m:math> 
+as a rational fraction.
+
+</para>
+      <equation id="uid22"><m:math overflow="scroll" mode="display">
+          <m:mtable displaystyle="true">
+            <m:mtr>
+              <m:mtd columnalign="right">
+                <m:mi>x</m:mi>
+              </m:mtd>
+              <m:mtd>
+                <m:mo>=</m:mo>
+              </m:mtd>
+              <m:mtd columnalign="left">
+                <m:mrow>
+                  <m:mn>5</m:mn>
+                  <m:mo>,</m:mo>
+                  <m:mn>432432432</m:mn>
+                  <m:mo>...</m:mo>
+                </m:mrow>
+              </m:mtd>
+            </m:mtr>
+            <m:mtr>
+              <m:mtd columnalign="right">
+                <m:mrow>
+                  <m:mn>1000</m:mn>
+                  <m:mi>x</m:mi>
+                </m:mrow>
+              </m:mtd>
+              <m:mtd>
+                <m:mo>=</m:mo>
+              </m:mtd>
+              <m:mtd columnalign="left">
+                <m:mrow>
+                  <m:mn>5432</m:mn>
+                  <m:mo>,</m:mo>
+                  <m:mn>432432432</m:mn>
+                  <m:mo>...</m:mo>
+                  <m:mspace width="2.em"/>
+                  <m:mtext>multiply</m:mtext>
+                  <m:mspace width="4.pt"/>
+                  <m:mtext>by</m:mtext>
+                  <m:mspace width="4.pt"/>
+                  <m:mtext>1000</m:mtext>
+                  <m:mspace width="4.pt"/>
+                  <m:mtext>on</m:mtext>
+                  <m:mspace width="4.pt"/>
+                  <m:mtext>both</m:mtext>
+                  <m:mspace width="4.pt"/>
+                  <m:mtext>sides</m:mtext>
+                </m:mrow>
+              </m:mtd>
+            </m:mtr>
+            <m:mtr>
+              <m:mtd columnalign="right">
+                <m:mrow/>
+              </m:mtd>
+            </m:mtr>
+            <m:mtr>
+              <m:mtd columnalign="right">
+                <m:mrow>
+                  <m:mn>999</m:mn>
+                  <m:mi>x</m:mi>
+                </m:mrow>
+              </m:mtd>
+              <m:mtd>
+                <m:mo>=</m:mo>
+              </m:mtd>
+              <m:mtd columnalign="left">
+                <m:mrow>
+                  <m:mn>5427</m:mn>
+                  <m:mspace width="1.em"/>
+                  <m:mspace width="2.em"/>
+                  <m:mspace width="2.em"/>
+                  <m:mtext>(</m:mtext>
+<m:mtext>subtracting</m:mtext>
+<m:mspace width="4.pt"/>
+                  <m:mtext>the</m:mtext>
+<m:mspace width="4.pt"/>
+<m:mtext>second</m:mtext>
+<m:mspace width="4.pt"/>
+<m:mtext>equation</m:mtext>
+<m:mspace width="4.pt"/>
+<m:mtext>from</m:mtext>
+<m:mspace width="4.pt"/>
+<m:mtext>the</m:mtext>
+<m:mspace width="4.pt"/>
+<m:mtext>first</m:mtext>
+<m:mspace width="4.pt"/>
+<m:mtext>equation</m:mtext>
+                  <m:mtext>)</m:mtext>
+                </m:mrow>
+              </m:mtd>
+            </m:mtr>
+            <m:mtr>
+              <m:mtd columnalign="right">
+                <m:mi>x</m:mi>
+              </m:mtd>
+              <m:mtd>
+                <m:mo>=</m:mo>
+              </m:mtd>
+              <m:mtd columnalign="left">
+                <m:mrow>
+                  <m:mfrac>
+                    <m:mn>5427</m:mn>
+                    <m:mn>999</m:mn>
+                  </m:mfrac>
+                  <m:mo>=</m:mo>
+                  <m:mfrac>
+                    <m:mn>201</m:mn>
+                    <m:mn>37</m:mn>
+                  </m:mfrac>
+                </m:mrow>
+              </m:mtd>
+            </m:mtr>
+          </m:mtable>
+        </m:math>
+      </equation>
+      <para id="id64459">For the first example, the decimal was multiplied by 10 and for the second example, the decimal was multiplied by 1000. This is because for the first example there was only one digit (i.e. 3) recurring, while for the second example there were three digits (i.e. 432) recurring.</para>
+      <para id="id64465">In general, if you have one digit recurring, then multiply by 10. If you have two digits recurring, then multiply by 100. If you have three digits recurring, then multiply by 1000. Can you spot the pattern yet?</para>
+      <para id="id64470">The number of zeros is the same as the number of recurring digits.</para>
+      <para id="id64474">Not all decimal numbers can be written as rational numbers. Why? Irrational decimal numbers like 
+
+<m:math overflow="scroll"><m:mrow><m:msqrt><m:mn>2</m:mn></m:msqrt><m:mo>=</m:mo><m:mn>1</m:mn><m:mo>,</m:mo><m:mn>4142135</m:mn><m:mo>.</m:mo><m:mo>.</m:mo><m:mo>.</m:mo></m:mrow></m:math>
+
+cannot be written with an integer numerator and denominator, because they do not have a pattern of recurring digits. However, when possible, you should try to use rational numbers or fractions instead of decimals.</para>
+<section id="secfhsst_id606"><title> Repeated Decimal Notation </title>
+      <list id="id64513" display="block" list-type="enumerated"><item id="uid23">Write the following using the repeated decimal notation:
+<list id="id64529" display="block" list-type="enumerated"><item id="uid24"><m:math overflow="scroll"><m:mrow><m:mn>0</m:mn><m:mo>,</m:mo><m:mn>11111111</m:mn><m:mo>...</m:mo></m:mrow></m:math></item><item id="uid25"><m:math overflow="scroll"><m:mrow><m:mn>0</m:mn><m:mo>,</m:mo><m:mn>1212121212</m:mn><m:mo>...</m:mo></m:mrow></m:math></item><item id="uid26"><m:math overflow="scroll"><m:mrow><m:mn>0</m:mn><m:mo>,</m:mo><m:mn>123123123123</m:mn><m:mo>...</m:mo></m:mrow></m:math></item><item id="uid27"><m:math overflow="scroll"><m:mrow><m:mn>0</m:mn><m:mo>,</m:mo><m:mn>11414541454145</m:mn><m:mo>...</m:mo></m:mrow></m:math></item></list>
+<link window="new" class="fullmarks" resource="http://www.fhsst.org/l3U">Click here for the solution</link></item>
+        <item id="uid28">Write the following in decimal form, using the repeated decimal notation:
+<list id="id64650" display="block" list-type="enumerated"><item id="uid29"><m:math overflow="scroll"><m:mfrac><m:mn>2</m:mn><m:mn>3</m:mn></m:mfrac></m:math></item><item id="uid30"><m:math overflow="scroll"><m:mrow><m:mn>1</m:mn><m:mfrac><m:mn>3</m:mn><m:mn>11</m:mn></m:mfrac></m:mrow></m:math></item><item id="uid31"><m:math overflow="scroll"><m:mrow><m:mn>4</m:mn><m:mfrac><m:mn>5</m:mn><m:mn>6</m:mn></m:mfrac></m:mrow></m:math></item><item id="uid32"><m:math overflow="scroll"><m:mrow><m:mn>2</m:mn><m:mfrac><m:mn>1</m:mn><m:mn>9</m:mn></m:mfrac></m:mrow></m:math></item></list>
+<link window="new" class="fullmarks" resource="http://www.fhsst.org/l3n">Click here for the solution</link></item>
+        <item id="uid33">Write the following decimals in fractional form:
+<list id="id64767" display="block" list-type="enumerated"><item id="uid34"><m:math overflow="scroll"><m:mrow><m:mn>0</m:mn><m:mo>,</m:mo><m:mn>633</m:mn><m:mover accent="true"><m:mn>3</m:mn><m:mo>˙</m:mo></m:mover></m:mrow></m:math></item><item id="uid35"><m:math overflow="scroll"><m:mrow><m:mn>5</m:mn><m:mo>,</m:mo><m:mn>3131</m:mn><m:mover><m:mn>31</m:mn><m:mo>¯</m:mo></m:mover></m:mrow></m:math></item><item id="uid36"><m:math overflow="scroll"><m:mrow><m:mn>0</m:mn><m:mo>,</m:mo><m:mn>99999</m:mn><m:mover accent="true"><m:mn>9</m:mn><m:mo>˙</m:mo></m:mover></m:mrow></m:math></item></list>
+<link window="new" class="fullmarks" resource="http://www.fhsst.org/l3Q">Click here for the solution</link></item>
+      </list>
+      
+</section>
+    </section>
+    <section id="cid8"><title>Summary</title><list id="eip-280" list-type="enumerated" number-style="arabic"><item>Real numbers can be either rational or irrational.</item><item> A rational number is any number which can be written as 
+<m:math overflow="scroll" mode="display">
+          <m:mfrac>
+            <m:mi>a</m:mi>
+            <m:mi>b</m:mi>
+          </m:mfrac>
+        </m:math>
+where <m:math overflow="scroll"><m:mi>a</m:mi></m:math> and <m:math overflow="scroll"><m:mi>b</m:mi></m:math> are integers and <m:math overflow="scroll"><m:mrow><m:mi>b</m:mi><m:mo>≠</m:mo><m:mn>0</m:mn></m:mrow></m:math></item>
+<item>The following are rational numbers:
+      <list id="id64890" display="block" list-type="enumerated" number-style="lower-alpha"><item id="uid37">Fractions with both denominator and numerator as integers.
+</item>
+        <item id="uid38">Integers.
+</item>
+        <item id="uid39">Decimal numbers that end.
+</item>
+        <item id="uid40">Decimal numbers that repeat.
+</item>
+      </list></item></list>
+    </section>
+    <section id="cid9"><title>End of Chapter Exercises</title><list id="id64954" display="block" list-type="enumerated"><item id="uid41">If <m:math overflow="scroll"><m:mi>a</m:mi></m:math> is an integer, <m:math overflow="scroll"><m:mi>b</m:mi></m:math> is an integer and <m:math overflow="scroll"><m:mi>c</m:mi></m:math> is irrational, which of the following are rational numbers?
+<list id="id64997" display="block" list-type="enumerated"><item id="uid42"><m:math overflow="scroll"><m:mfrac><m:mn>5</m:mn><m:mn>6</m:mn></m:mfrac></m:math></item><item id="uid43"><m:math overflow="scroll"><m:mfrac><m:mi>a</m:mi><m:mn>3</m:mn></m:mfrac></m:math></item><item id="uid44"><m:math overflow="scroll"><m:mfrac><m:mi>b</m:mi><m:mn>2</m:mn></m:mfrac></m:math></item><item id="uid45"><m:math overflow="scroll"><m:mfrac><m:mn>1</m:mn><m:mi>c</m:mi></m:mfrac></m:math>
+</item></list>
+<link window="new" class="fullmarks" resource="http://www.fhsst.org/l3v">Click here for the
+solution</link>
+</item>
+
+        <item id="uid46">Write each decimal as a simple fraction:
+<list id="id65104" display="block" list-type="enumerated"><item id="uid47"><m:math overflow="scroll"><m:mrow><m:mn>0</m:mn><m:mo>,</m:mo><m:mn>5</m:mn></m:mrow></m:math></item><item id="uid48"><m:math overflow="scroll"><m:mrow><m:mn>0</m:mn><m:mo>,</m:mo><m:mn>12</m:mn></m:mrow></m:math></item><item id="uid49"><m:math overflow="scroll"><m:mrow><m:mn>0</m:mn><m:mo>,</m:mo><m:mn>6</m:mn></m:mrow></m:math></item><item id="uid50"><m:math overflow="scroll"><m:mrow><m:mn>1</m:mn><m:mo>,</m:mo><m:mn>59</m:mn></m:mrow></m:math></item><item id="uid51"><m:math overflow="scroll"><m:mrow><m:mn>12</m:mn><m:mo>,</m:mo><m:mn>27</m:mn><m:mover accent="true"><m:mn>7</m:mn><m:mo>˙</m:mo></m:mover></m:mrow></m:math>
+</item></list>
+<link window="new" class="fullmarks" resource="http://www.fhsst.org/l3f">Click here for the
+solution</link>
+</item>
+
+        <item id="uid52">Show that the decimal <m:math overflow="scroll"><m:mrow><m:mn>3</m:mn><m:mo>,</m:mo><m:mn>21</m:mn><m:mover accent="true"><m:mn>1</m:mn><m:mo>˙</m:mo></m:mover><m:mover accent="true"><m:mn>8</m:mn><m:mo>˙</m:mo></m:mover></m:mrow></m:math> is a rational number.
+<newline/>
+<link window="new" class="fullmarks" resource="http://www.fhsst.org/l3G">Click here for the
+solution</link>
+</item>
+        <item id="uid53">Express <m:math overflow="scroll"><m:mrow><m:mn>0</m:mn><m:mo>,</m:mo><m:mn>7</m:mn><m:mover accent="true"><m:mn>8</m:mn><m:mo>˙</m:mo></m:mover></m:mrow></m:math> as a fraction <m:math overflow="scroll"><m:mfrac><m:mi>a</m:mi><m:mi>b</m:mi></m:mfrac></m:math> where <m:math overflow="scroll"><m:mrow><m:mi>a</m:mi><m:mo>,</m:mo><m:mi>b</m:mi><m:mo>∈</m:mo><m:mi mathvariant="double-struck">Z</m:mi></m:mrow></m:math> (show all working).
+<newline/>
+<link window="new" class="fullmarks" resource="http://www.fhsst.org/lOf">Click here for the
+solution</link>
+
+</item>
+</list>
+    </section>
+  </content>
+</document>

@@ -1,3 +1,10 @@
+ 3. ed: the show/hide of maths requires internal state and modifies
+    the text in the editor. Still need a post-process method for when
+    the user saves or publishes the text (in order to replace the
+    hidden mathml).
+
+---
+
 Prioritised tasks:
 
  1. xml: Initial search for and evaluation of XML editors for expert
@@ -5,11 +12,6 @@ Prioritised tasks:
 
  2. ed: deleting an allowed tag pair does not work if the tag contains
     attributes.
-
- 3. ed: the show/hide of maths requires internal state and modifies
-    the text in the editor. Still need a post-process method for when
-    the user saves or publishes the text (in order to replace the
-    hidden mathml).
 
  4. ed: fix weird bug. when holding down shift and the left arrow to
     select text, the selection does not grow to the left as it
