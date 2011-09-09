@@ -1,25 +1,38 @@
 <?php
 
+include("translate.php");
+
 $DEBUG = false;
 
-$url = $_GET["getUrl"];
-if($url) {
-  if(substr($url, -5) == "/view")
-    $url = substr($url, 0, -4) . "index.cnxml";
-  elseif(substr($url, -1) == "/")
-    $url = $url . "index.cnxml";
-
-  if($DEBUG)
+$module = $_GET["getModule"];
+//$module = 'm11429';
+if($module) {
+  if($DEBUG) {
     $fp = fopen("index.cnxml", "rb");
-  else
+    $language = "en"; // Engish implies no translation
+  } else {
+    $url = 'http://cnx.org/content/' . $module . '/latest/index.cnxml';
     $fp = fopen($url, "rb");
+    $language = $_GET["getLanguage"];
+  }
+
+  // Get original CNXML
   $text = "";
   while(!feof($fp)) {
     $text .= fread($fp, 8192);
   }
   fclose($fp);
+
+  // Translate
+  if($language != "en") {
+    $version = get_cnxml_version($text);
+    $url = 'http://cnx.org/content/' . $module . '/' . $version . '/module_export?format=plain';
+    $translation = translate_cnxml($url, "en", $language);
+    $text = fix_cnxml_translation($text, $translation);
+  }
 } else {
-  $url = "";
+  $module = "";
+  $language = "en";
   $text = "";
 }
 
@@ -104,12 +117,25 @@ $text = $newText;
   <body>
     <h2>CNXML Editor</h2>
     <form method="get" action="index.php">
-      <input type="text" name="getUrl" value="<?php echo $url; ?>" size="50"/>
-      <input type="submit" value="Get"/>
+      <p>Module number: <input type="text" name="getModule" value="<?php echo $module; ?>" size="10"/>
+      &nbsp;&nbsp; Target language: <select name="getLanguage">
+<?php
+
+foreach($transLanguageList as $key=>$entry) {
+  $entry = explode(":", $entry);
+  echo '          <option value="' . $entry[0] . '"';
+  if($entry[0] == $language)
+    echo ' selected';
+  echo '>' . $entry[1] . '</option>' . "\n";
+}
+
+?>        </select>
+        &nbsp;&nbsp; <input type="submit" value="Get"/>
+      </p>
     </form>
     <form>
       <input type="hidden" name="metadata" value="<?php echo htmlentities($metaText); ?>"/>
-      <input type="button" value="emphasis" onClick="insertSurroundingTag(editor, 'emphasis');"/>
+      <input type="button" value="emphasis tag" onClick="insertSurroundingTag(editor, 'emphasis');"/>
       <br/>
       <textarea id="code" name="code" onClick="alert(\"blah\");"><?php echo htmlentities($text); ?></textarea>
       <br/>
