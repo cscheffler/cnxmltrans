@@ -2,10 +2,16 @@
 
 include("translate.php");
 
-$DEBUG = false;
+$DEBUG = FALSE;
+$TEST = FALSE;
+
+if($TEST) {
+  assert_options(ASSERT_ACTIVE, 1);
+  assert_options(ASSERT_BAIL, 1);
+  $_GET = array('getModule' => 'm11429', 'getLanguage' => 'af');
+}
 
 $module = $_GET["getModule"];
-//$module = 'm11429';
 if($module) {
   if($DEBUG) {
     $fp = fopen("index.cnxml", "rb");
@@ -63,13 +69,56 @@ while(TRUE) {
 }
 $text .= substr($oldText, $startPos);
 
+// Specially treat tags that should really be inline with rest of text
+$tagsForceInline = array("emphasis","term"); // I'm assuming these are unnested tags
+foreach($tagsForceInline as $tagName) {
+  $newText = '';
+  $pos = 0;
+  while(TRUE) {
+    $openTagStart = stripos($text, '<' . $tagName, $pos);
+    if($openTagStart === FALSE)
+      break;
+    $openTagStop = stripos($text, '>', $openTagStart)+1;
+    $closeTag = '</' . $tagName . '>';
+    $closeTagStart = stripos($text, $closeTag, $openTagStop);
+    assert('$closeTagStart !== FALSE');
+    $closeTagStop = $closeTagStart + strlen($closeTag);
+
+    $whitespace = FALSE;
+    $pos1 = $openTagStart;
+    /*
+    while(($pos1 > 0) and (in_array($text[$pos1-1], array(" ", "\n", "\r", "\t")))) {
+      $whitespace = TRUE;
+      $pos1 -= 1;
+    }
+    */
+    $newText .= substr($text, $pos, $pos1-$pos);
+    if($whitespace)
+      $newText .= ' ';
+    $newText .= substr($text, $openTagStart, $openTagStop-$openTagStart);
+    $newText .= trim(substr($text, $openTagStop, $closeTagStart-$openTagStop));
+    $newText .= substr($text, $closeTagStart, $closeTagStop-$closeTagStart);
+    $pos = $closeTagStop;
+    /*
+    $whitespace = FALSE;
+    while(($pos < strlen($text)) and (in_array($text[$pos], array(" ", "\n", "\r", "\t")))) {
+      $whitespace = TRUE;
+      $pos += 1;
+    }
+    if($whitespace)
+      $newText .= ' ';
+    */
+  }
+  $newText .= substr($text, $pos);
+  $text = $newText;
+}
+
 // Clean up XML tag indentation and text wrapping
-$tagsNoNewLine = array("emphasis");
 $indent = 0;
 $tagStack = array();
 $textPos = 0;
 $newText = "";
-$maxColumns = 160;
+$maxColumns = 80;
 
 function wrap_text($text, $indent, $columns) {
   $indent = str_repeat(" ", $indent);
@@ -77,10 +126,26 @@ function wrap_text($text, $indent, $columns) {
 }
 
 while(TRUE) {
-  $tagStart = strpos($text, "<", $textPos);
+  $tagStart = $textPos;
+  while(TRUE) {
+    $tagStart = strpos($text, "<", $tagStart);
+    if($tagStart === FALSE)
+      break;
+    $tagStop = strpos($text, ">", $tagStart);
+    $space = strpos($text, ' ', $tagStart);
+    if(($space === FALSE) or ($tagStop < $space))
+      $space = $tagStop;
+    $tagName = substr($text, $tagStart+1, $space-($tagStart+1));
+    if(in_array($tagName, $tagsForceInline)) {
+      $closeTag = '</' . $tagName . '>';
+      $tagStart = stripos($text, $closeTag, $tagStop);
+      assert('$tagStart !== FALSE');
+      $tagStart += strlen($closeTag);
+    } else
+      break;
+  }
   if($tagStart === FALSE)
     break;
-  $tagStop = strpos($text, ">", $tagStart);
   $preTag = trim(substr($text, $textPos, $tagStart-$textPos)); // Everything before the next tag
   $tag = substr($text, $tagStart, $tagStop-$tagStart+1);
   $textPos = $tagStop + 1;

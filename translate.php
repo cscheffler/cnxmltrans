@@ -1,11 +1,10 @@
 <?php
 
 $TEST = FALSE;
-assert_options(ASSERT_ACTIVE, 1);
-assert_options(ASSERT_BAIL, 1);
-assert_options(ASSERT_BAIL, 1);
 
 if($TEST) {
+  assert_options(ASSERT_ACTIVE, 1);
+  assert_options(ASSERT_BAIL, 1);
   $module = 'm11429';
   $sl = 'en';
   $tl = 'af';
