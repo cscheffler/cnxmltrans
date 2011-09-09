@@ -1,6 +1,9 @@
 <?php
 
 $TEST = FALSE;
+assert_options(ASSERT_ACTIVE, 1);
+assert_options(ASSERT_BAIL, 1);
+assert_options(ASSERT_BAIL, 1);
 
 if($TEST) {
   $module = 'm11429';
@@ -118,24 +121,75 @@ function translate_cnxml($iUrl, $iSourceLang, $iTargetLang) {
 
 function fix_cnxml_translation($iOriginal, $iTranslation) {
   // Replace "translated" maths with original maths
-  $tagName = 'm:math';
+  $tagNames = array('m:math', 'md:email', 'md:surname', 'md:firstname',
+		    'md:maintainerlist', 'md:revised', 'md:created',
+		    'md:othername', 'md:version', 'md:authorlist');
 
-  $openTag = '<' . $tagName;
-  $closeTag = '</' . $tagName . '>';
-  $fixedCnxml = '';
-  $posOrig = 0;
-  $posTran = 0;
+  // Process start of document
+  $posOrig = stripos($iOriginal, '<document') + 1;
+  $posTran = stripos($iTranslation, '<document') + 1;
+  $fixedCnxml = substr($iOriginal, 0, $posOrig);
+
+  $startOrig = $posOrig;
+  $startTran = $posTran;
   while(TRUE) {
-    $startOrig = stripos($iOriginal, $openTag, $posOrig);
+    // Find the start of a tag
+    $startOrig = stripos($iOriginal, '<', $startOrig);
     if($startOrig === FALSE)
       break;
-    $startTran = stripos($iTranslation, $openTag, $posTran);
-    $endOrig = stripos($iOriginal, $closeTag, $startOrig) + strlen($closeTag);
-    $endTran = stripos($iTranslation, $closeTag, $startTran) + strlen($closeTag);
-    $fixedCnxml .= substr($iTranslation, $posTran, $startTran-$posTran);
-    $fixedCnxml .= substr($iOriginal, $startOrig, $endOrig-$startOrig);
-    $posOrig = $endOrig;
-    $posTran = $endTran;
+    $startTran = stripos($iTranslation, '<', $startTran);
+
+    // Determine the tag name and whether it is self-closing in the original text
+    $posClosing = stripos($iOriginal, '>', $startOrig);
+    $isSelfClosing = $iOriginal[$posClosing-1] == '/';
+    $posTagNameEnd = stripos($iOriginal, ' ', $startOrig);
+    if(($posTagNameEnd === FALSE) or ($posClosing < $posTagNameEnd)) {
+      if($isSelfClosing)
+	$posTagNameEnd = $posClosing-1;
+      else
+	$posTagNameEnd = $posClosing;
+    }
+    $tagName = strtolower(substr($iOriginal, $startOrig+1, $posTagNameEnd-($startOrig+1)));
+
+    if($isSelfClosing) {
+      // Google Translate seems to make open-close tag pairs out of
+      // self-closing tags. Check if this happened and keep the
+      // original version in all cases.
+      $endOrig = $posClosing+1;
+      $endTran = stripos($iTranslation, '>', $startTran);
+      assert('$endTran !== FALSE');
+      if($iTranslation[$endTran-1] == '/') {
+	// Turns out that this is self-closing in the translation
+	$endTran += 1;
+      } else {
+	// Was turned into an open-close tag pair: find the closing tag
+	$closingTag = '</' . $tagName . '>';
+	$endTran = stripos($iTranslation, $closingTag, $endTran);
+	assert('$endTran !== FALSE');
+	$endTran += strlen($closingTag);
+      }
+      $fixedCnxml .= substr($iTranslation, $posTran, $startTran-$posTran);
+      $fixedCnxml .= substr($iOriginal, $startOrig, $endOrig-$startOrig);
+      $posOrig = $endOrig;
+      $posTran = $endTran;
+      $startOrig = $posOrig;
+      $startTran = $posTran;
+    } elseif(in_array($tagName, $tagNames)) {
+      // This tag should be left alone by Google Translate, so
+      // explicitly copy the original back in.
+      $closeTag = '</' . $tagName . '>';
+      $endOrig = stripos($iOriginal, $closeTag, $startOrig) + strlen($closeTag);
+      $endTran = stripos($iTranslation, $closeTag, $startTran) + strlen($closeTag);
+      $fixedCnxml .= substr($iTranslation, $posTran, $startTran-$posTran);
+      $fixedCnxml .= substr($iOriginal, $startOrig, $endOrig-$startOrig);
+      $posOrig = $endOrig;
+      $posTran = $endTran;
+      $startOrig = $posOrig;
+      $startTran = $posTran;
+    } else {
+      $startOrig += 1;
+      $startTran += 1;
+    }
   }
   $fixedCnxml .= substr($iTranslation, $posTran);
   return $fixedCnxml;
