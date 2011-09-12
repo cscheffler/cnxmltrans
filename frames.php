@@ -11,9 +11,9 @@ if($module) {
 ?>
   </head>
   <frameset cols="*,*" frameborder=1 framespacing=0 rows="*">
-    <frame src="index.php?getModule=<?php echo $module; ?>&getLanguage=<?php echo $targetLanguage; ?>" noresize
-	   scrolling=no marginwidth=0 marginheight=0>
     <frame src="index.php?getModule=<?php echo $module; ?>&getLanguage=<?php echo $sourceLanguage; ?>" noresize
+	   scrolling=no marginwidth=0 marginheight=0>
+    <frame src="index.php?getModule=<?php echo $module; ?>&getLanguage=<?php echo $targetLanguage; ?>" noresize
 	   scrolling=no marginwidth=0 marginheight=0>
   </frameset>
 <?php

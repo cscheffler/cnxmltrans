@@ -15,7 +15,7 @@ $module = $_GET["getModule"];
 if($module) {
   if($DEBUG) {
     $fp = fopen("index.cnxml", "rb");
-    $language = "en"; // Engish implies no translation
+    $language = "en"; // English implies no translation
   } else {
     $url = 'http://cnx.org/content/' . $module . '/latest/index.cnxml';
     $fp = fopen($url, "rb");
@@ -178,6 +178,7 @@ $text = $newText;
     <link rel="stylesheet" href="xml.css">
     <style type="text/css">.CodeMirror {border-top: 1px solid black; border-bottom: 1px solid black;}</style>
     <link rel="stylesheet" href="css/docs.css">
+  <style type="text/css">body {margin-top: 10px; margin-bottom: 0px;}</style>
   </head>
   <body>
     <h2>CNXML Editor</h2>
