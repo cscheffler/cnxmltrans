@@ -178,6 +178,7 @@ $text = $newText;
     <link rel="stylesheet" href="xml.css">
     <style type="text/css">.CodeMirror {border-top: 1px solid black; border-bottom: 1px solid black;}</style>
     <link rel="stylesheet" href="css/docs.css">
+  <style type="text/css">body {margin-top: 10px; margin-bottom: 0px;}</style>
   </head>
   <body>
     <h2>CNXML Editor</h2>
